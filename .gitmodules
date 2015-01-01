@@ -1,0 +1,3 @@
+[submodule "app/bower_components/google-blogger"]
+	path = app/bower_components/google-blogger
+	url = git@github.com:zdwolfe/google-blogger.git
