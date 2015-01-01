@@ -5,7 +5,6 @@
   var app = document.querySelector('#app');
   app.addEventListener('template-bound', function() {
     var pages = document.querySelector('#pages');
-    var cafeVoltaPage = document.querySelector('cafe-volta-page');
 
     // Setup routing
     var DEFAULT_ROUTE = '';
@@ -17,7 +16,7 @@
     var routes = {
       '': root, };
 
-    var router = app.router = Router(routes);
+    var router = app.router = new Router(routes);
     router.configure({html5history: true});
     router.init(DEFAULT_ROUTE);
     // Listen for pages to fire their change-route event
