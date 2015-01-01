@@ -21,12 +21,19 @@
 
 <body unresolved>
 
-  <div class="hero-unit">
-    <yo-greeting></yo-greeting>
-    <p>You now have</p>
-    <yo-list></yo-list>
-  </div>
 
+  <template id="app" is="auto-binding">
+
+    <core-animated-pages id="pages" selected="{{selected}}"
+                         transitions="cross-fade fade-slide-up fade-scale" fit>
+      <section layout vertical>
+        <div class="page" id="contacts" contacts="{{contacts}}" cross-fade?="{{largeScreen}}" heading="{{heading}}" flex>
+          <cafe-volta-page class="page" id="cafe-volta" posts="5">
+          </cafe-volta-page>
+        </div>
+      </section>
+    </core-animated-pages>
+  </template>
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
