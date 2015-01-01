@@ -12,15 +12,11 @@
 
     var root = function() {
       app.$.ajax.go();
-      if (!app.posts) {
-        return app.router.setRoute(DEFAULT_ROUTE);
-      }
       pages.selected = 0;
     };
 
     var routes = {
-      '': root,
-    };
+      '': root, };
 
     var router = app.router = Router(routes);
     router.configure({html5history: true});

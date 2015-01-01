@@ -39,10 +39,13 @@
           </core-toolbar>
           <div class="content">
 
-            <core-list id="list" data="{{posts}}"
+            <h4>content thing</h4>
+            {{posts}}
+            <core-list id="list" data="{{posts.items}}"
                                  scrollTarget="{{$.headerPanel.scroller}}"
                                  runwayFactor="5">
               <template>
+                thing
                 <a href="{{index | getUrl}}" on-click="{{navigate}}">
                   <div class="row" layout horizontal center>
                     <core-image src="{{model.avatar}}" preload sizing="cover">
