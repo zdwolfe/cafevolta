@@ -19,14 +19,11 @@
   <!-- endbuild-->
 </head>
 
-<body unresolved>
-
-
+<body unresolved fullbleed vertical layout>
   <template id="app" is="auto-binding">
     <core-ajax id="ajax"
-               url="https://www.googleapis.com/blogger/v3/blogs/479217620522860094/posts?fields=items(author%2Cid%2Cimages%2Ctitle%2Curl)%2CnextPageToken&key=AIzaSyCwajGAzN-NzwrttzE-58hWLMvJRSYAGks&labels=dinner"
-               handleAs="json"
-               response="{{posts}}"></core-ajax>
+      url="https://www.googleapis.com/blogger/v3/blogs/479217620522860094/posts?fields=items(author%2Cid%2Cimages%2Ctitle%2Curl)%2CnextPageToken&key=AIzaSyCwajGAzN-NzwrttzE-58hWLMvJRSYAGks&labels=dinner" handleAs="json" auto="true" response="{{posts}}">
+    </core-ajax>
 
     <core-media-query query="min-width: 640px" queryMatches="{{largeScreen}}">
     </core-media-query>
@@ -35,7 +32,7 @@
                          transitions="cross-fade fade-slide-up fade-scale" fit>
       <section layout vertical>
         <div class="page" id="contacts" contacts="{{contacts}}" cross-fade?="{{largeScreen}}" heading="{{heading}}" flex>
-          <cafe-volta-page class="page" id="cafe-volta" posts="5">
+          <cafe-volta-page class="page" id="cafe-volta" posts="{{posts}}">
           </cafe-volta-page>
         </div>
       </section>

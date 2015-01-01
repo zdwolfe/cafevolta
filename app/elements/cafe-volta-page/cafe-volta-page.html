@@ -1,7 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../base-page/base-page.html">
 
-<polymer-element name="cafe-volta-page" attributes="" extends="base-page">
+<polymer-element name="cafe-volta-page" attributes="posts" extends="base-page">
+
   <template>
     <link rel="stylesheet" href="cafe-volta-page.css">
 
@@ -37,22 +38,14 @@
             </paper-icon-button>
             <div id="title" flex>{{heading}}</div>
           </core-toolbar>
-          <div class="content">
 
-            <h4>content thing</h4>
-            {{posts}}
+          <div class="content">
             <core-list id="list" data="{{posts.items}}"
-                                 scrollTarget="{{$.headerPanel.scroller}}"
-                                 runwayFactor="5">
+              scrollTarget="{{$.headerPanel.scroller}}">
               <template>
-                thing
-                <a href="{{index | getUrl}}" on-click="{{navigate}}">
-                  <div class="row" layout horizontal center>
-                    <core-image src="{{model.avatar}}" preload sizing="cover">
-                    </core-image>
-                    <div flex>{{model.title}}</div>
-                  </div>
-                </a>
+                <div class="row" layout horizontal center>
+                  <div flex>{{model.title}}</div>
+                </div>
               </template>
             </core-list>
 

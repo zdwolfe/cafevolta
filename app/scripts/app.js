@@ -11,7 +11,6 @@
     var DEFAULT_ROUTE = '';
 
     var root = function() {
-      app.$.ajax.go();
       pages.selected = 0;
     };
 
