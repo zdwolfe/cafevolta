@@ -10,16 +10,16 @@
     // Setup routing
     var DEFAULT_ROUTE = '';
 
-    var labels = function(label) {
+    var root = function() {
+      app.$.ajax.go();
       if (!app.posts) {
         return app.router.setRoute(DEFAULT_ROUTE);
       }
-      cafeVoltaPage.label = label;
       pages.selected = 0;
     };
 
     var routes = {
-      '/labels/:label': labels,
+      '': root,
     };
 
     var router = app.router = Router(routes);
@@ -45,7 +45,7 @@
     });
 
     // Set duration for core-animated-pages transitions
-    CoreStyle.g.transitions.duration = '0.2s';
+    //CoreStyle.g.transitions.duration = '0.2s';
   });
 
 })(window, document);
