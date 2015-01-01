@@ -24,6 +24,12 @@ module.exports = function (grunt) {
   };
 
   grunt.initConfig({
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
+    },
     yeoman: yeomanConfig,
     watch: {
       options: {
